@@ -23,3 +23,16 @@
 1&  =   1,000^  =   One Novemdecillion
 1*  =   1,000&  =   One Vigintillion
 ```
+
+Usage
+
+```
+using Numerology;
+
+...
+
+125.GetNumerology();
+125.17.GetNumerology();
+125.21E+15.GetNumerology(10000, 2);
+
+```
