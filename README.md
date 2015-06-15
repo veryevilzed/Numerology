@@ -1,4 +1,6 @@
 # Numerology
+
+```
 1K  =   1,000   =   One Thousand
 1M  =   1,000K  =   One Million
 1B  =   1,000M  =   One Billion
@@ -20,3 +22,4 @@
 1^  =   1,000%  =   One Octodecillion
 1&  =   1,000^  =   One Novemdecillion
 1*  =   1,000&  =   One Vigintillion
+```
