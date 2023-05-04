@@ -3,8 +3,8 @@
 namespace Numerology {
 	public static class Numbers {
 
-		public static int defaultStep = 1000;
-		public static int defaultZeroPadding = 2;
+		public const int DefaultStep = 1000;
+		public const int DefaultZeroPadding = 2;
 
 		private static string format(double data, int zeroPadding, string letter) {
 			if (zeroPadding == 0)
@@ -12,42 +12,24 @@ namespace Numerology {
 			return string.Format("{0:0." + "".PadRight(zeroPadding, '#') + "}{1}", data, letter);
 		}
 
-		public static string GetNumerology(this int data){
-			return GetNumerology(data, defaultStep, defaultZeroPadding);
+
+		public static string ToNumerology(this uint data, int step = DefaultStep, int zeroPadding = DefaultZeroPadding){
+			return ((double)data).ToNumerology(step, zeroPadding);
 		}
 
-		public static string GetNumerology(this long data){
-			return GetNumerology(data, defaultStep, defaultZeroPadding);
+		public static string ToNumerology(this int data, int step = DefaultStep, int zeroPadding = DefaultZeroPadding){
+			return ((double)data).ToNumerology(step, zeroPadding);
 		}
 
-
-		public static string GetNumerology(this int data, int step){
-			return GetNumerology(data, step, defaultZeroPadding);
+		public static string ToNumerology(this long data, int step = DefaultStep, int zeroPadding = DefaultZeroPadding){
+			return ((double)data).ToNumerology(step, zeroPadding);
 		}
 
-		public static string GetNumerology(this long data, int step){
-			return GetNumerology(data, step, defaultZeroPadding);
+		public static string ToNumerology(this ulong data, int step = DefaultStep, int zeroPadding = DefaultZeroPadding){
+			return ((double)data).ToNumerology(step, zeroPadding);
 		}
 
-		public static string GetNumerology(this double data, int step){
-			return data.GetNumerology(step, defaultZeroPadding);
-		}
-
-		public static string GetNumerology(this int data, int step, int zeroPadding){
-			return ((double)data).GetNumerology(step, zeroPadding);
-		}
-
-		public static string GetNumerology(this long data, int step, int zeroPadding){
-			return ((double)data).GetNumerology(step, zeroPadding);
-		}
-
-
-		public static string GetNumerology(this double data){
-			return data.GetNumerology(defaultStep, defaultZeroPadding);
-		}
-
-
-		public static string GetNumerology(this double data, int step, int zeroPadding){
+		public static string ToNumerology(this double data, int step = DefaultStep, int zeroPadding = DefaultZeroPadding){
 
 			if (step < 1000)
 				step = 1000;
